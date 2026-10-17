@@ -1,3 +1,5 @@
+import Section from "@/components/Section";
+
 type SkillCategory = {
     category: string;
     skills: string[];
@@ -28,10 +30,8 @@ const skillCategories: SkillCategory[] = [
 
 export default function Skills() {
     return (
-        <section id="skills" className="scroll-mt-16 px-6 py-24">
+        <Section id="skills" title="Skills">
             <div className="mx-auto max-w-4xl">
-                <h2 className="text-3xl font-bold">Skills</h2>
-
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
                     {skillCategories.map((skillCategory) => (
                         <div key={skillCategory.category} className="rounded-xl border p-6">
@@ -43,12 +43,12 @@ export default function Skills() {
                                     <span key={skill} className="rounded-full border px-3 py-1 text-sm">
                                         {skill}
                                     </span>
-                                ))};
+                                ))}
                             </div>
                         </div>
                     ))}        
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

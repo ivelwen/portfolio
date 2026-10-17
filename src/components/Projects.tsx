@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
+import Section from "@/components/Section";
 
 type Project = {
     title: string;
@@ -36,15 +37,12 @@ const projects: Project[] = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="scroll-mt-16 px-6 py-24">
-            <div className="mx-auto max-w-4xl">
-                <h2 className="text-3xl font-bold">Projects</h2>
+        <Section id="projects" title="Projects">
                 <div className="mt-8 flex flex-col gap-6">
                   {projects.map((project) => (
                 <ProjectCard key={project.title} title={project.title} description={project.description} technologies={project.technologies} />
                ))}
                 </div>
-            </div>
-        </section>
+        </Section>
             );
         }
