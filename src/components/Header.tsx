@@ -17,6 +17,7 @@ export default function Header() {
                     <a href="#skills" className="hover:underline">
                         Skills
                     </a>
+                    <a href="#certifications" className="hover:underline">Certifications</a>
                     <a href="#contact" className="hover:underline">
                         Contact
                     </a>
