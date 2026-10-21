@@ -1,13 +1,17 @@
+import Link from "next/link";
+
 type ProjectCardProps = {
     title: string;
     description: string;
     technologies: string[];
-    };
+    href?: string;
+};
 
 export default function ProjectCard({
     title,
     description,
     technologies,
+    href,
 }: ProjectCardProps) {
     return (
         <article className="rounded-xl border p-6 transition-all hover:border-gray-500 hover:shadow-lg">
@@ -17,11 +21,23 @@ export default function ProjectCard({
 
             <div className="mt-6 flex flex-wrap gap-2">
                 {technologies.map((technology) => (
-                    <span key={technology} className="rounded-full border px-3 py-1 text-sm">
+                    <span
+                        key={technology}
+                        className="rounded-full border px-3 py-1 text-sm"
+                    >
                         {technology}
                     </span>
-            ))}
-        </div>
-    </article>
+                ))}
+            </div>
+
+            {href && (
+                <Link
+                    href={href}
+                    className="mt-6 inline-block font-semibold underline underline-offset-4"
+                >
+                    View Project
+                </Link>
+            )}
+        </article>
     );
 }
