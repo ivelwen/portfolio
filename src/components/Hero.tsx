@@ -1,12 +1,40 @@
+import { buttonVariants } from "@/components/ui/button";
+
 export default function Hero() {
     return (
         <section className="min-h-screen px-6 flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Levi Wheaton</h1>
-                <p className="mt-6 text-lg font-medium sm:text-xl">IT Operations | DevOps | AI Engineering</p>
-                <p className="mt-6 max-w-2xl text-base leading-7 sm:text-lg">I build and operate reliable technology systems while expanding my expertise in cloud infrastructure, DevOps, and AI engineering through hands-on projects and continuing education.</p>
+            <p className="mb-4 font-mono text-sm font-medium uppercase tracking-[0.18em] text-primary">
+                IT Operations | DevOps | AI Engineering
+            </p>
+
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                Levi Wheaton
+            </h1>
+
+            <h2 className="mt-6 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+                Building reliable systems.
+                <span className="block text-muted-foreground">
+                    Engineering what comes next.
+                </span>
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-base leading-7 sm:text-lg">
+                I build and operate reliable technology systems while expanding my expertise in cloud infrastructure, DevOps, and AI engineering through hands-on projects and continuing education.
+            </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="#projects" className="rounded-lg border px-6 py-3 font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2">View Projects</a>
-                <a href="#contact" className="rounded-lg border px-6 py-3 font-semibold transition-colors hover:underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2">Contact Me</a>
+                <a
+                    href="#projects"
+                    className={buttonVariants({ variant: "default", size: "lg" })}
+                >
+                    View Projects
+                </a>
+
+                <a
+                    href="#contact"
+                    className={buttonVariants({ variant: "outline", size: "lg" })}
+                >
+                    Contact Me
+                </a>
             </div>
         </section>
     );
