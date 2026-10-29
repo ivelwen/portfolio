@@ -2,6 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 
 type Project = {
+    category: string;
     title: string;
     description: string;
     technologies: string[];
@@ -10,6 +11,7 @@ type Project = {
 
 const projects: Project[] = [
     {
+        category: "Infrastructure",
         title: "Kubernetes Home Lab",
         description:
            "Built and operate a self-hosted Kubernetes home lab using MicroK8s on Ubuntu Server.",
@@ -25,13 +27,14 @@ const projects: Project[] = [
         href: "/projects/home-lab",
     },
     {
+        category: "Software Engineering",
         title: "Developer Portfolio",
         description:
-            "Designed and built a personal portfolio using Next.js, React, Typescript, and Tailwind CSS with a focus on responsive design and reusable components.",
+            "Designed and built a personal portfolio using Next.js, React, TypeScript, and Tailwind CSS with a focus on responsive design and reusable components.",
         technologies: [
             "Next.js",
             "React",
-            "Typescript",
+            "TypeScript",
             "Tailwind CSS",
             "Git",
         ],
@@ -41,11 +44,16 @@ const projects: Project[] = [
 
 export default function Projects() {
     return (
-        <Section id="projects" title="Projects">
-            <div className="mt-8 flex flex-col gap-6">
+        <Section
+            id="projects"
+            eyebrow="Selected Work"
+            title="Projects"
+        >
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
                 {projects.map((project) => (
                     <ProjectCard
                         key={project.title}
+                        category={project.category}
                         title={project.title}
                         description={project.description}
                         technologies={project.technologies}
