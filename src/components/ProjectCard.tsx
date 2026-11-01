@@ -39,7 +39,8 @@ export default function ProjectCard({
             {href && (
                 <Link
                     href={href}
-                    className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    className="mt-auto pt-6 inline-flex items-center gap-1.5 rounded-sm text-sm font-medium text-primary
+                    outline-none transition-colors hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring/50"
                 >
                     View Project
                     <ArrowUpRight

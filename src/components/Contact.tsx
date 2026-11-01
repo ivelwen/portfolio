@@ -24,7 +24,8 @@ export default function Contact() {
                     href="https://github.com/ivelwen"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    className="inline-flex items-center gap-1.5 rounded-sm text-sm font-medium text-primary outline-none
+                    transition-colors hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring/50"
                 >
                     GitHub
                     <ArrowUpRight className="size-4" aria-hidden="true" />
@@ -33,7 +34,8 @@ export default function Contact() {
                     href="https://www.linkedin.com/in/levi-wheaton-532374438"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                    className="inline-flex items-center gap-1.5 rounded-sm text-sm font-medium text-primary outline-none
+                    transition-colors hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring/50"
                 >
                     LinkedIn
                     <ArrowUpRight className="size-4" aria-hidden="true" />
