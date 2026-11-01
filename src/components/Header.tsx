@@ -1,8 +1,8 @@
 "use client";
 import { Menu, X } from "lucide-react";
-
 import { useState } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,37 +23,41 @@ export default function Header() {
                     </span>
                 </Link>
 
-                <button
-                    type="button"
-                    className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:hidden"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-expanded={isMenuOpen}
-                    aria-controls="mobile-navigation"
-                    aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                >
-                    {isMenuOpen ? (
-                        <X className="size-4" aria-hidden="true" />
-                    ) : (
-                        <Menu className="size-4" aria-hidden="true" />
-                    )}
-                </button>
+                <div className="flex items-center gap-2">
+                    <div className="hidden items-center gap-1 md:flex">
+                        <Link href="/#about" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                            About
+                        </Link>
+                        <Link href="/#projects" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                            Projects
+                        </Link>
+                        <Link href="/#skills" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                            Skills
+                        </Link>
+                        <Link href="/#certifications" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                            Certifications
+                        </Link>
+                        <Link href="/#contact" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                            Contact
+                        </Link>
+                    </div>
 
-                <div className="hidden items-center gap-1 md:flex">
-                    <Link href="/#about" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-                        About
-                    </Link>
-                    <Link href="/#projects" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-                        Projects
-                    </Link>
-                    <Link href="/#skills" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-                        Skills
-                    </Link>
-                    <Link href="/#certifications" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-                        Certifications
-                    </Link>
-                    <Link href="/#contact" className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
-                        Contact
-                    </Link>
+                    <ThemeToggle />
+
+                    <button
+                        type="button"
+                        className="flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:hidden"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="mobile-navigation"
+                        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                    >
+                        {isMenuOpen ? (
+                            <X className="size-4" aria-hidden="true" />
+                        ) : (
+                            <Menu className="size-4" aria-hidden="true" />
+                        )}
+                    </button>
                 </div>
             </nav>
 
