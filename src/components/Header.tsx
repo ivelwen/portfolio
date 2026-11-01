@@ -9,11 +9,13 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background">
-            <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+            <nav
+                className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+                aria-label="Primary navigation"
+            >
                 <Link
                     href="/"
                     className="group flex items-center gap-3 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-                    aria-label="Levi Wheaton home"
                 >
                     <span className="flex size-9 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 font-mono text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                         LW
@@ -21,6 +23,7 @@ export default function Header() {
                     <span className="hidden text-sm font-medium sm:block">
                         Levi Wheaton
                     </span>
+                    <span className="sr-only">Home</span>
                 </Link>
 
                 <div className="flex items-center gap-2">
